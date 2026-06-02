@@ -1,0 +1,2 @@
+# seed/ — run-once scripts to populate the DB with starter/demo data.
+# Not imported by the running server.

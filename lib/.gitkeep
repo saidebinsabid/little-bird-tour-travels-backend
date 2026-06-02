@@ -1,0 +1,2 @@
+# lib/ — reusable SERVICES & third-party integrations (email, stripe, firebaseAdmin).
+# Framework-agnostic: no req/res here. Imported by controllers + webhooks.
