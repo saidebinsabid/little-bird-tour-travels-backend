@@ -15,7 +15,7 @@ const router = express.Router();
 router.post(
   "/upload",
   verifyJWT,
-  verifyRole("admin", "super-admin", "agent"),
+  verifyRole("super-admin"),
   upload.single("file"),
   c.uploadImage
 );

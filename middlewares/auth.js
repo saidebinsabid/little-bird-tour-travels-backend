@@ -18,7 +18,7 @@ async function verifyJWT(req, res, next) {
 }
 
 // Factory: build a role guard for any role(s). Use after verifyJWT.
-//   router.post("/admin-thing", verifyJWT, verifyRole("admin"), ctrl.fn)
+//   router.post("/admin-thing", verifyJWT, verifyRole("super-admin"), ctrl.fn)
 function verifyRole(...allowedRoles) {
   return async function (req, res, next) {
     try {
@@ -42,5 +42,5 @@ module.exports = {
   verifyJWT,
   verifyRole,
   // Convenience aliases — add the roles your app uses:
-  verifyAdmin: verifyRole("admin"),
+  verifyAdmin: verifyRole("super-admin"),
 };

@@ -113,45 +113,107 @@ const packages = [
 ];
 
 // ── Hajj & Umrah ─────────────────────────────────────────────────────────
+const HAJJ_DOCS = { en: ["Valid passport (8+ months)", "Photo (white background)", "Vaccine certificate", "NID & birth certificate", "Mahram documents (if applicable)"], bn: ["বৈধ পাসপোর্ট (৮+ মাস)", "ছবি (সাদা ব্যাকগ্রাউন্ড)", "টিকা সনদ", "এনআইডি ও জন্মনিবন্ধন", "মাহরাম ডকুমেন্ট (প্রযোজ্য হলে)"] };
+const UMRAH_DOCS = { en: ["Valid passport (6+ months)", "Photo (white background)", "Vaccine certificate", "NID copy"], bn: ["বৈধ পাসপোর্ট (৬+ মাস)", "ছবি (সাদা ব্যাকগ্রাউন্ড)", "টিকা সনদ", "এনআইডি কপি"] };
+
+// Hajj & Umrah package data — prices/inclusions/exclusions reflect the real
+// Bangladesh market (Govt Hajj 2025: Tk 4.67–6.90 lakh; HAAB private min Tk 5.10
+// lakh; BD Umrah: Tk 1.15–3.20 lakh, 14 days = 7+7 nights).
 const hajj = [
+  // ── Hajj (3) ──
   {
-    title: { en: "Economy Umrah Package 14 Days", bn: "ইকোনমি উমরাহ প্যাকেজ ১৪ দিন" },
-    type: "umrah", packageClass: "economy", status: "published",
-    price: { amount: 145000, currency: "BDT", unit: "per person" }, durationDays: 14,
-    cover: img("1591604442553-3e8d3d4f1e8f"),
-    hotelMakkah: { en: "2.5 km from Haram", bn: "হারাম থেকে ২.৫ কিমি" },
-    hotelMadinah: { en: "800 m from Masjid an-Nabawi", bn: "মসজিদে নববী থেকে ৮০০ মি" },
-    inclusions: { en: ["Return air ticket", "Umrah visa", "Hotel (shared)", "Transport", "Ziyarah"], bn: ["রিটার্ন বিমান টিকিট", "উমরাহ ভিসা", "হোটেল (শেয়ার্ড)", "পরিবহন", "জিয়ারাহ"] },
-    documents: { en: ["Valid passport (6+ months)", "Photo (white background)", "Vaccine certificate"], bn: ["বৈধ পাসপোর্ট (৬+ মাস)", "ছবি (সাদা ব্যাকগ্রাউন্ড)", "টিকা সনদ"] },
+    title: { en: "Hajj Package 2026 — Economy", bn: "হজ্জ প্যাকেজ ২০২৬ — ইকোনমি" },
+    type: "hajj", packageClass: "economy", status: "published",
+    price: { amount: 525000, currency: "BDT", unit: "per person" }, durationDays: 38,
+    cover: img("1513072064285-240f87fa81e8"),
+    hotelMakkah: { en: "Aziziyah, ~3 km from Haram (shuttle)", bn: "আজিজিয়া, হারাম থেকে ~৩ কিমি (শাটল)" },
+    hotelMadinah: { en: "1 km from Masjid an-Nabawi", bn: "মসজিদে নববী থেকে ১ কিমি" },
+    inclusions: { en: ["Return air ticket", "Hajj visa & processing", "Shared hotel (4–6 per room)", "Mina & Arafah tent (D category)", "Train/bus transport in KSA", "Experienced Moallem (guide)", "Ziyarah in Makkah & Madinah"], bn: ["রিটার্ন বিমান টিকিট", "হজ্জ ভিসা ও প্রসেসিং", "শেয়ার্ড হোটেল (৪–৬ জন/রুম)", "মিনা ও আরাফাহ তাঁবু (ডি ক্যাটাগরি)", "সৌদিতে ট্রেন/বাস পরিবহন", "অভিজ্ঞ মুয়াল্লিম (গাইড)", "মক্কা ও মদিনায় জিয়ারাহ"] },
+    exclusions: { en: ["Qurbani / sacrifice (~750 SAR)", "Meals (carry ~BDT 40,000 spending)", "Personal expenses & shopping", "Extra / overweight baggage charges"], bn: ["কুরবানি / দম (~৭৫০ রিয়াল)", "খাবার (~৪০,০০০ টাকা সাথে রাখুন)", "ব্যক্তিগত খরচ ও কেনাকাটা", "অতিরিক্ত / ওজন-বেশি লাগেজ চার্জ"] },
+    documents: HAJJ_DOCS,
   },
   {
-    title: { en: "Premium Umrah Package 12 Days", bn: "প্রিমিয়াম উমরাহ প্যাকেজ ১২ দিন" },
-    type: "umrah", packageClass: "premium", status: "published",
-    price: { amount: 235000, currency: "BDT", unit: "per person" }, durationDays: 12,
-    cover: img("1565019011521-b0575cbb57c8"),
-    hotelMakkah: { en: "5-star, 300 m from Haram", bn: "৫-তারকা, হারাম থেকে ৩০০ মি" },
-    hotelMadinah: { en: "5-star, near Masjid an-Nabawi", bn: "৫-তারকা, মসজিদে নববীর কাছে" },
-    inclusions: { en: ["Return air ticket", "Umrah visa", "5-star hotel", "Private transport", "Full meals", "Ziyarah"], bn: ["রিটার্ন বিমান টিকিট", "উমরাহ ভিসা", "৫-তারকা হোটেল", "প্রাইভেট পরিবহন", "ফুল মিল", "জিয়ারাহ"] },
-    documents: { en: ["Valid passport (6+ months)", "Photo (white background)", "Vaccine certificate"], bn: ["বৈধ পাসপোর্ট (৬+ মাস)", "ছবি (সাদা ব্যাকগ্রাউন্ড)", "টিকা সনদ"] },
-  },
-  {
-    title: { en: "Hajj Package 2026 (Standard)", bn: "হজ্জ প্যাকেজ ২০২৬ (স্ট্যান্ডার্ড)" },
+    title: { en: "Hajj Package 2026 — Standard", bn: "হজ্জ প্যাকেজ ২০২৬ — স্ট্যান্ডার্ড" },
     type: "hajj", packageClass: "standard", status: "published",
-    price: { amount: 695000, currency: "BDT", unit: "per person" }, durationDays: 35,
-    cover: img("1519817650390-64a93db51149"),
-    hotelMakkah: { en: "1 km from Haram", bn: "হারাম থেকে ১ কিমি" },
-    hotelMadinah: { en: "500 m from Masjid an-Nabawi", bn: "মসজিদে নববী থেকে ৫০০ মি" },
-    inclusions: { en: ["Air ticket", "Hajj visa", "Hotels", "Mina/Arafah tent", "Transport", "Guide (Muallim)"], bn: ["বিমান টিকিট", "হজ্জ ভিসা", "হোটেল", "মিনা/আরাফাহ তাঁবু", "পরিবহন", "মুয়াল্লিম"] },
-    documents: { en: ["Valid passport", "Photo", "Vaccine certificate", "Mahram documents (if applicable)"], bn: ["বৈধ পাসপোর্ট", "ছবি", "টিকা সনদ", "মাহরাম ডকুমেন্ট (প্রযোজ্য হলে)"] },
+    price: { amount: 695000, currency: "BDT", unit: "per person" }, durationDays: 32,
+    cover: img("1591004272853-1462c050dca8"),
+    hotelMakkah: { en: "4-star, 1.2–1.5 km from Haram", bn: "৪-তারকা, হারাম থেকে ১.২–১.৫ কিমি" },
+    hotelMadinah: { en: "Markaziyah, 500 m from Masjid an-Nabawi", bn: "মারকাজিয়া, মসজিদে নববী থেকে ৫০০ মি" },
+    inclusions: { en: ["Return air ticket", "Hajj visa & processing", "4-star hotel (quad room)", "Mina & Arafah tent (D+ category)", "AC transport in KSA", "Daily breakfast & dinner", "Experienced Moallem (guide)", "Ziyarah in Makkah & Madinah"], bn: ["রিটার্ন বিমান টিকিট", "হজ্জ ভিসা ও প্রসেসিং", "৪-তারকা হোটেল (কোয়াড রুম)", "মিনা ও আরাফাহ তাঁবু (ডি+ ক্যাটাগরি)", "সৌদিতে এসি পরিবহন", "দৈনিক নাস্তা ও রাতের খাবার", "অভিজ্ঞ মুয়াল্লিম (গাইড)", "মক্কা ও মদিনায় জিয়ারাহ"] },
+    exclusions: { en: ["Qurbani / sacrifice (~750 SAR)", "Lunch", "Personal expenses & shopping", "Extra / overweight baggage charges"], bn: ["কুরবানি / দম (~৭৫০ রিয়াল)", "দুপুরের খাবার", "ব্যক্তিগত খরচ ও কেনাকাটা", "অতিরিক্ত / ওজন-বেশি লাগেজ চার্জ"] },
+    documents: HAJJ_DOCS,
+  },
+  {
+    title: { en: "Hajj Package 2026 — Premium (VIP)", bn: "হজ্জ প্যাকেজ ২০২৬ — প্রিমিয়াম (ভিআইপি)" },
+    type: "hajj", packageClass: "premium", status: "published",
+    price: { amount: 1150000, currency: "BDT", unit: "per person" }, durationDays: 25,
+    cover: img("1580418827493-f2b22c0a76cb"),
+    hotelMakkah: { en: "5-star, within 300 m of Haram", bn: "৫-তারকা, হারাম থেকে ৩০০ মি-র মধ্যে" },
+    hotelMadinah: { en: "5-star, beside Masjid an-Nabawi", bn: "৫-তারকা, মসজিদে নববীর পাশে" },
+    inclusions: { en: ["Premium return air ticket", "Hajj visa & processing", "5-star hotel (double room)", "VIP Mina & Arafah tent (A category)", "Private AC transport", "Full-board meals", "Dedicated guide", "Full Ziyarah in Makkah & Madinah"], bn: ["প্রিমিয়াম রিটার্ন বিমান টিকিট", "হজ্জ ভিসা ও প্রসেসিং", "৫-তারকা হোটেল (ডাবল রুম)", "ভিআইপি মিনা ও আরাফাহ তাঁবু (এ ক্যাটাগরি)", "প্রাইভেট এসি পরিবহন", "ফুল-বোর্ড খাবার", "ডেডিকেটেড গাইড", "মক্কা ও মদিনায় সম্পূর্ণ জিয়ারাহ"] },
+    exclusions: { en: ["Qurbani / sacrifice (~750 SAR)", "Personal shopping & laundry", "Travel insurance (optional)", "Anything not mentioned above"], bn: ["কুরবানি / দম (~৭৫০ রিয়াল)", "ব্যক্তিগত কেনাকাটা ও লন্ড্রি", "ভ্রমণ বীমা (ঐচ্ছিক)", "উপরে উল্লেখ নেই এমন কিছু"] },
+    documents: HAJJ_DOCS,
   },
 ];
 
 // ── Visa services ────────────────────────────────────────────────────────
 const visas = [
-  { title: { en: "Thailand Tourist Visa", bn: "থাইল্যান্ড ট্যুরিস্ট ভিসা" }, country: "Thailand", visaType: "tourist", status: "published", fee: { amount: 5500, currency: "BDT" }, processingTime: "5–7 working days", flag: "🇹🇭", requirements: { en: ["Passport (6+ months)", "2 photos", "Bank statement (6 months)", "NID", "Trade license / job ID"], bn: ["পাসপোর্ট (৬+ মাস)", "২ কপি ছবি", "ব্যাংক স্টেটমেন্ট (৬ মাস)", "এনআইডি", "ট্রেড লাইসেন্স / জব আইডি"] } },
-  { title: { en: "Malaysia Tourist Visa", bn: "মালয়েশিয়া ট্যুরিস্ট ভিসা" }, country: "Malaysia", visaType: "tourist", status: "published", fee: { amount: 6000, currency: "BDT" }, processingTime: "7–10 working days", flag: "🇲🇾", requirements: { en: ["Passport", "2 photos", "Bank statement", "NID"], bn: ["পাসপোর্ট", "২ কপি ছবি", "ব্যাংক স্টেটমেন্ট", "এনআইডি"] } },
-  { title: { en: "Dubai (UAE) Tourist Visa", bn: "দুবাই (আমিরাত) ট্যুরিস্ট ভিসা" }, country: "UAE", visaType: "tourist", status: "published", fee: { amount: 18000, currency: "BDT" }, processingTime: "3–5 working days", flag: "🇦🇪", requirements: { en: ["Passport", "Photo", "Confirmed ticket", "Hotel booking"], bn: ["পাসপোর্ট", "ছবি", "কনফার্ম টিকিট", "হোটেল বুকিং"] } },
-  { title: { en: "India Tourist Visa", bn: "ভারত ট্যুরিস্ট ভিসা" }, country: "India", visaType: "tourist", status: "published", fee: { amount: 1200, currency: "BDT" }, processingTime: "10–15 working days", flag: "🇮🇳", requirements: { en: ["Passport", "Photo", "NID", "Utility bill", "Bank statement"], bn: ["পাসপোর্ট", "ছবি", "এনআইডি", "ইউটিলিটি বিল", "ব্যাংক স্টেটমেন্ট"] } },
+  {
+    title: { en: "Thailand Tourist Visa", bn: "থাইল্যান্ড ট্যুরিস্ট ভিসা" },
+    country: "Thailand", visaType: "tourist", status: "published", flag: "🇹🇭",
+    fee: { amount: 5500, currency: "BDT" },
+    processingTime: "7–15 working days",
+    validity: { en: "Single entry, valid 3 months", bn: "সিঙ্গেল এন্ট্রি, ৩ মাস মেয়াদ" },
+    stayDuration: { en: "Up to 60 days", bn: "সর্বোচ্চ ৬০ দিন" },
+    overview: { en: "Apply for a Thailand tourist visa from Bangladesh through the Thai e-Visa portal or VFS Dhaka — perfect for beaches, city tours and shopping.", bn: "থাই ই-ভিসা পোর্টাল বা VFS ঢাকা-র মাধ্যমে বাংলাদেশ থেকে থাইল্যান্ড ট্যুরিস্ট ভিসা — সৈকত, সিটি ট্যুর ও শপিংয়ের জন্য উপযুক্ত।" },
+    requirements: {
+      en: ["Passport valid 6+ months with at least 2 blank pages", "2 recent photos (3.5×4.5 cm, white background)", "Completed visa application form", "Confirmed return air ticket", "Hotel booking / accommodation proof", "Bank statement (last 6 months) with solvency", "Trade license / employment proof / student ID", "National ID (NID) copy"],
+      bn: ["পাসপোর্ট (৬+ মাস মেয়াদ, কমপক্ষে ২টি খালি পৃষ্ঠা)", "সাম্প্রতিক ২ কপি ছবি (৩.৫×৪.৫ সেমি, সাদা ব্যাকগ্রাউন্ড)", "পূরণকৃত ভিসা আবেদন ফর্ম", "কনফার্ম রিটার্ন বিমান টিকিট", "হোটেল বুকিং / থাকার প্রমাণ", "ব্যাংক স্টেটমেন্ট (৬ মাস) ও সলভেন্সি", "ট্রেড লাইসেন্স / চাকরির প্রমাণ / স্টুডেন্ট আইডি", "জাতীয় পরিচয়পত্র (এনআইডি)"],
+    },
+    note: { en: "Bangladeshi citizens are NOT eligible for Visa on Arrival — a visa must be obtained before travel.", bn: "বাংলাদেশি নাগরিকদের জন্য ভিসা-অন-অ্যারাইভাল নেই — ভ্রমণের আগেই ভিসা নিতে হবে।" },
+  },
+  {
+    title: { en: "Malaysia Tourist eVisa", bn: "মালয়েশিয়া ট্যুরিস্ট ই-ভিসা" },
+    country: "Malaysia", visaType: "tourist", status: "published", flag: "🇲🇾",
+    fee: { amount: 6000, currency: "BDT" },
+    processingTime: "2–3 working days (eVisa)",
+    validity: { en: "Single entry, valid 3 months", bn: "সিঙ্গেল এন্ট্রি, ৩ মাস মেয়াদ" },
+    stayDuration: { en: "Up to 30 days", bn: "সর্বোচ্চ ৩০ দিন" },
+    overview: { en: "Malaysia requires Bangladeshi nationals to obtain an eVisa online before travel. Quick processing and a fully online application.", bn: "বাংলাদেশি নাগরিকদের ভ্রমণের আগে অনলাইনে মালয়েশিয়া ই-ভিসা নিতে হয়। দ্রুত প্রসেসিং ও সম্পূর্ণ অনলাইন আবেদন।" },
+    requirements: {
+      en: ["Passport valid 6+ months with 3 blank pages", "Passport-size photo (white background)", "Bank statement (last 6 months) + solvency letter", "Confirmed return flight ticket", "Hotel reservation", "National ID (NID)", "Employment / trade license proof"],
+      bn: ["পাসপোর্ট (৬+ মাস মেয়াদ, ৩টি খালি পৃষ্ঠা)", "পাসপোর্ট সাইজ ছবি (সাদা ব্যাকগ্রাউন্ড)", "ব্যাংক স্টেটমেন্ট (৬ মাস) + সলভেন্সি লেটার", "কনফার্ম রিটার্ন ফ্লাইট টিকিট", "হোটেল রিজার্ভেশন", "জাতীয় পরিচয়পত্র (এনআইডি)", "চাকরি / ট্রেড লাইসেন্স প্রমাণ"],
+    },
+    note: { en: "Apply via Malaysia's official eVisa system; print the approved eVisa to show at the entry checkpoint.", bn: "মালয়েশিয়ার অফিসিয়াল ই-ভিসা সিস্টেমে আবেদন; অনুমোদিত ই-ভিসা প্রিন্ট করে এন্ট্রি চেকপয়েন্টে দেখাতে হবে।" },
+  },
+  {
+    title: { en: "Dubai (UAE) Tourist Visa", bn: "দুবাই (আমিরাত) ট্যুরিস্ট ভিসা" },
+    country: "UAE", visaType: "tourist", status: "published", flag: "🇦🇪",
+    fee: { amount: 18000, currency: "BDT" },
+    processingTime: "3–5 working days (express 24–48 hrs)",
+    validity: { en: "Enter within 60 days of issue", bn: "ইস্যুর ৬০ দিনের মধ্যে প্রবেশ" },
+    stayDuration: { en: "30 days (14 / 30 / 60 / 90-day options)", bn: "৩০ দিন (১৪ / ৩০ / ৬০ / ৯০ দিনের অপশন)" },
+    overview: { en: "UAE e-Visa for Bangladeshi travellers — explore Dubai's skyline, desert safari and shopping. Fast, fully online processing.", bn: "বাংলাদেশি ভ্রমণকারীদের জন্য আমিরাত ই-ভিসা — দুবাইয়ের আকাশচুম্বী ভবন, ডেজার্ট সাফারি ও শপিং। দ্রুত, সম্পূর্ণ অনলাইন প্রসেসিং।" },
+    requirements: {
+      en: ["Passport valid 6+ months", "Recent colour photo (white background, 35×45 mm)", "Confirmed return air ticket", "Hotel booking confirmation", "Bank statement (if requested)"],
+      bn: ["পাসপোর্ট (৬+ মাস মেয়াদ)", "সাম্প্রতিক রঙিন ছবি (সাদা ব্যাকগ্রাউন্ড, ৩৫×৪৫ মিমি)", "কনফার্ম রিটার্ন বিমান টিকিট", "হোটেল বুকিং কনফার্মেশন", "ব্যাংক স্টেটমেন্ট (প্রয়োজনে)"],
+    },
+    note: { en: "The e-Visa is emailed after approval — carry a printed copy. Validity is entry window; stay counts from the entry date.", bn: "অনুমোদনের পর ই-ভিসা ইমেইলে আসে — প্রিন্ট কপি সাথে রাখুন। মেয়াদ হলো প্রবেশের সময়সীমা; থাকার হিসাব প্রবেশের তারিখ থেকে।" },
+  },
+  {
+    title: { en: "India Tourist e-Visa", bn: "ভারত ট্যুরিস্ট ই-ভিসা" },
+    country: "India", visaType: "tourist", status: "published", flag: "🇮🇳",
+    fee: { amount: 1500, currency: "BDT" },
+    processingTime: "3–7 working days (e-Visa)",
+    validity: { en: "Up to 5 years, multiple entry (e-Tourist)", bn: "সর্বোচ্চ ৫ বছর, মাল্টিপল এন্ট্রি (ই-ট্যুরিস্ট)" },
+    stayDuration: { en: "Up to 90 days per visit", bn: "প্রতি ভিজিটে সর্বোচ্চ ৯০ দিন" },
+    overview: { en: "India e-Tourist visa for Bangladeshi citizens — apply fully online, no embassy visit needed. Great for treatment, family visits and tourism.", bn: "বাংলাদেশি নাগরিকদের জন্য ভারত ই-ট্যুরিস্ট ভিসা — সম্পূর্ণ অনলাইনে আবেদন, দূতাবাসে যাওয়ার দরকার নেই। চিকিৎসা, পারিবারিক ভ্রমণ ও পর্যটনের জন্য আদর্শ।" },
+    requirements: {
+      en: ["Passport valid 6+ months", "2 photos (2×2 inch, white background)", "National ID / citizenship proof (with English translation)", "Utility bill — electricity / gas / landline (any one)", "Bank statement (last 6 months, min ৳25,000)", "Proof of income above ৳20,000/month"],
+      bn: ["পাসপোর্ট (৬+ মাস মেয়াদ)", "২ কপি ছবি (২×২ ইঞ্চি, সাদা ব্যাকগ্রাউন্ড)", "জাতীয় পরিচয়পত্র / নাগরিকত্বের প্রমাণ (ইংরেজি অনুবাদসহ)", "ইউটিলিটি বিল — বিদ্যুৎ / গ্যাস / ল্যান্ডলাইন (যেকোনো একটি)", "ব্যাংক স্টেটমেন্ট (৬ মাস, ন্যূনতম ৳২৫,০০০)", "মাসিক ৳২০,০০০+ আয়ের প্রমাণ"],
+    },
+    note: { en: "Government visa fee is FREE for Bangladeshi nationals — only our service fee applies. e-Visa entry is via authorized airports/seaports only.", bn: "বাংলাদেশি নাগরিকদের জন্য সরকারি ভিসা ফি ফ্রি — শুধু আমাদের সার্ভিস ফি প্রযোজ্য। ই-ভিসা শুধু অনুমোদিত এয়ারপোর্ট/সিপোর্ট দিয়ে প্রবেশযোগ্য।" },
+  },
 ];
 
 // ── Hotels ───────────────────────────────────────────────────────────────
@@ -184,9 +246,9 @@ const banners = [
 
 // ── Reviews (approved samples) ───────────────────────────────────────────
 const reviews = [
-  { refType: "package", refId: "general", rating: 5, comment: "Excellent service, very well organized trip to Cox's Bazar!", status: "approved", author: { name: "Rakib Hasan", email: "rakib@example.com" }, createdAt: new Date() },
-  { refType: "package", refId: "general", rating: 5, comment: "Our Umrah journey was smooth and hassle-free. Highly recommended.", status: "approved", author: { name: "Ayesha Siddiqua", email: "ayesha@example.com" }, createdAt: new Date() },
-  { refType: "package", refId: "general", rating: 4, comment: "Great Maldives honeymoon package. Loved the resort!", status: "approved", author: { name: "Tanvir & Mim", email: "tanvir@example.com" }, createdAt: new Date() },
+  { refType: "package", refId: "general", rating: 5, comment: "Excellent service, very well organized trip to Cox's Bazar!", status: "approved", author: { name: "Rakib Hasan", email: "rakib@example.com" }, video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" },
+  { refType: "package", refId: "general", rating: 5, comment: "Our Umrah journey was smooth and hassle-free. Highly recommended.", status: "approved", author: { name: "Ayesha Siddiqua", email: "ayesha@example.com" }, video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" },
+  { refType: "package", refId: "general", rating: 4, comment: "Great Maldives honeymoon package. Loved the resort!", status: "approved", author: { name: "Tanvir & Mim", email: "tanvir@example.com" }, video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" },
 ];
 
 // ════════════════════════════════════════════════════════════════════════
@@ -213,15 +275,98 @@ packages.push(
 );
 
 hajj.push(
-  { title: { en: "Ramadan Umrah Package 20 Days", bn: "রমজান উমরাহ প্যাকেজ ২০ দিন" }, type: "umrah", packageClass: "standard", status: "published", price: { amount: 195000, currency: "BDT", unit: "per person" }, durationDays: 20, cover: img("1591604442553-3e8d3d4f1e8f"), hotelMakkah: { en: "1 km from Haram", bn: "হারাম থেকে ১ কিমি" }, hotelMadinah: { en: "600 m from Masjid an-Nabawi", bn: "মসজিদে নববী থেকে ৬০০ মি" }, inclusions: { en: ["Return air ticket", "Umrah visa", "Hotel", "Transport", "Iftar & Sehri"], bn: ["রিটার্ন বিমান টিকিট", "উমরাহ ভিসা", "হোটেল", "পরিবহন", "ইফতার ও সেহরি"] }, documents: { en: ["Valid passport", "Photo", "Vaccine certificate"], bn: ["বৈধ পাসপোর্ট", "ছবি", "টিকা সনদ"] } },
-  { title: { en: "Family Umrah Package 10 Days", bn: "ফ্যামিলি উমরাহ প্যাকেজ ১০ দিন" }, type: "umrah", packageClass: "standard", status: "published", price: { amount: 165000, currency: "BDT", unit: "per person" }, durationDays: 10, cover: img("1565019011521-b0575cbb57c8"), hotelMakkah: { en: "1.2 km from Haram", bn: "হারাম থেকে ১.২ কিমি" }, hotelMadinah: { en: "700 m from Masjid an-Nabawi", bn: "মসজিদে নববী থেকে ৭০০ মি" }, inclusions: { en: ["Return air ticket", "Umrah visa", "Family room", "Transport", "Ziyarah"], bn: ["রিটার্ন বিমান টিকিট", "উমরাহ ভিসা", "ফ্যামিলি রুম", "পরিবহন", "জিয়ারাহ"] }, documents: { en: ["Valid passport", "Photo", "Vaccine certificate"], bn: ["বৈধ পাসপোর্ট", "ছবি", "টিকা সনদ"] } },
+  {
+    title: { en: "Economy Umrah Package 14 Days", bn: "ইকোনমি উমরাহ প্যাকেজ ১৪ দিন" },
+    type: "umrah", packageClass: "economy", status: "published",
+    price: { amount: 135000, currency: "BDT", unit: "per person" }, durationDays: 14,
+    cover: img("1519817650390-64a93db51149"),
+    hotelMakkah: { en: "3-star, ~1 km from Haram (shared)", bn: "৩-তারকা, হারাম থেকে ~১ কিমি (শেয়ার্ড)" },
+    hotelMadinah: { en: "3-star, ~800 m from Masjid an-Nabawi", bn: "৩-তারকা, মসজিদে নববী থেকে ~৮০০ মি" },
+    inclusions: { en: ["Return air ticket", "Umrah visa", "3-star shared hotel", "Airport & inter-city transport", "Ziyarah in Makkah & Madinah", "Group guide"], bn: ["রিটার্ন বিমান টিকিট", "উমরাহ ভিসা", "৩-তারকা শেয়ার্ড হোটেল", "এয়ারপোর্ট ও আন্তঃশহর পরিবহন", "মক্কা ও মদিনায় জিয়ারাহ", "গ্রুপ গাইড"] },
+    exclusions: { en: ["Meals", "Personal expenses & shopping", "Travel insurance", "Extra / overweight baggage charges"], bn: ["খাবার", "ব্যক্তিগত খরচ ও কেনাকাটা", "ভ্রমণ বীমা", "অতিরিক্ত / ওজন-বেশি লাগেজ চার্জ"] },
+    documents: UMRAH_DOCS,
+  },
+  {
+    title: { en: "Standard Umrah Package 12 Days", bn: "স্ট্যান্ডার্ড উমরাহ প্যাকেজ ১২ দিন" },
+    type: "umrah", packageClass: "standard", status: "published",
+    price: { amount: 185000, currency: "BDT", unit: "per person" }, durationDays: 12,
+    cover: img("1542816417-0983c9c9ad53"),
+    hotelMakkah: { en: "4-star, ~600 m from Haram", bn: "৪-তারকা, হারাম থেকে ~৬০০ মি" },
+    hotelMadinah: { en: "4-star, ~400 m from Masjid an-Nabawi", bn: "৪-তারকা, মসজিদে নববী থেকে ~৪০০ মি" },
+    inclusions: { en: ["Return air ticket", "Umrah visa", "4-star hotel (triple/quad)", "Daily breakfast", "AC transport", "Ziyarah in Makkah & Madinah", "Group guide"], bn: ["রিটার্ন বিমান টিকিট", "উমরাহ ভিসা", "৪-তারকা হোটেল (ট্রিপল/কোয়াড)", "দৈনিক নাস্তা", "এসি পরিবহন", "মক্কা ও মদিনায় জিয়ারাহ", "গ্রুপ গাইড"] },
+    exclusions: { en: ["Lunch & dinner", "Personal expenses & shopping", "Travel insurance", "Extra / overweight baggage charges"], bn: ["দুপুর ও রাতের খাবার", "ব্যক্তিগত খরচ ও কেনাকাটা", "ভ্রমণ বীমা", "অতিরিক্ত / ওজন-বেশি লাগেজ চার্জ"] },
+    documents: UMRAH_DOCS,
+  },
+  {
+    title: { en: "Premium Umrah Package 10 Days", bn: "প্রিমিয়াম উমরাহ প্যাকেজ ১০ দিন" },
+    type: "umrah", packageClass: "premium", status: "published",
+    price: { amount: 265000, currency: "BDT", unit: "per person" }, durationDays: 10,
+    cover: img("1627728734379-a5f8c099763e"),
+    hotelMakkah: { en: "5-star, within 300 m of Haram", bn: "৫-তারকা, হারাম থেকে ৩০০ মি-র মধ্যে" },
+    hotelMadinah: { en: "5-star, beside Masjid an-Nabawi", bn: "৫-তারকা, মসজিদে নববীর পাশে" },
+    inclusions: { en: ["Return air ticket", "Umrah visa", "5-star hotel (double room)", "Full-board meals", "Private AC transport", "Full Ziyarah in Makkah & Madinah", "Dedicated guide"], bn: ["রিটার্ন বিমান টিকিট", "উমরাহ ভিসা", "৫-তারকা হোটেল (ডাবল রুম)", "ফুল-বোর্ড খাবার", "প্রাইভেট এসি পরিবহন", "মক্কা ও মদিনায় সম্পূর্ণ জিয়ারাহ", "ডেডিকেটেড গাইড"] },
+    exclusions: { en: ["Personal shopping & laundry", "Travel insurance (optional)", "Extra / overweight baggage charges", "Anything not mentioned above"], bn: ["ব্যক্তিগত কেনাকাটা ও লন্ড্রি", "ভ্রমণ বীমা (ঐচ্ছিক)", "অতিরিক্ত / ওজন-বেশি লাগেজ চার্জ", "উপরে উল্লেখ নেই এমন কিছু"] },
+    documents: UMRAH_DOCS,
+  },
 );
 
 visas.push(
-  { title: { en: "Singapore Tourist Visa", bn: "সিঙ্গাপুর ট্যুরিস্ট ভিসা" }, country: "Singapore", visaType: "tourist", status: "published", fee: { amount: 6500, currency: "BDT" }, processingTime: "5–7 working days", flag: "🇸🇬", requirements: { en: ["Passport", "Photo", "Bank statement", "NID"], bn: ["পাসপোর্ট", "ছবি", "ব্যাংক স্টেটমেন্ট", "এনআইডি"] } },
-  { title: { en: "Turkey e-Visa", bn: "তুরস্ক ই-ভিসা" }, country: "Turkey", visaType: "tourist", status: "published", fee: { amount: 9500, currency: "BDT" }, processingTime: "7–12 working days", flag: "🇹🇷", requirements: { en: ["Passport", "Photo", "Hotel booking", "Ticket"], bn: ["পাসপোর্ট", "ছবি", "হোটেল বুকিং", "টিকিট"] } },
-  { title: { en: "China Tourist Visa", bn: "চীন ট্যুরিস্ট ভিসা" }, country: "China", visaType: "tourist", status: "published", fee: { amount: 8000, currency: "BDT" }, processingTime: "7–10 working days", flag: "🇨🇳", requirements: { en: ["Passport", "Photo", "Bank statement", "Invitation/booking"], bn: ["পাসপোর্ট", "ছবি", "ব্যাংক স্টেটমেন্ট", "ইনভাইটেশন/বুকিং"] } },
-  { title: { en: "Schengen Tourist Visa", bn: "শেনজেন ট্যুরিস্ট ভিসা" }, country: "Europe", visaType: "tourist", status: "published", fee: { amount: 12000, currency: "BDT" }, processingTime: "15–20 working days", flag: "🇪🇺", requirements: { en: ["Passport", "Photo", "Bank statement (6m)", "Travel insurance", "Itinerary"], bn: ["পাসপোর্ট", "ছবি", "ব্যাংক স্টেটমেন্ট (৬ মাস)", "ট্রাভেল ইন্স্যুরেন্স", "ইটিনারারি"] } },
+  {
+    title: { en: "Singapore Tourist Visa", bn: "সিঙ্গাপুর ট্যুরিস্ট ভিসা" },
+    country: "Singapore", visaType: "tourist", status: "published", flag: "🇸🇬",
+    fee: { amount: 6500, currency: "BDT" },
+    processingTime: "3 working days (often 10–20 from Dhaka)",
+    validity: { en: "Typically up to 35 days", bn: "সাধারণত সর্বোচ্চ ৩৫ দিন" },
+    stayDuration: { en: "As granted on arrival (usually 30 days)", bn: "আগমনে প্রদত্ত (সাধারণত ৩০ দিন)" },
+    overview: { en: "Singapore visa for Bangladeshi citizens must be lodged through an authorized agent. We handle the Form 14A, Letter of Introduction and submission for you.", bn: "বাংলাদেশি নাগরিকদের সিঙ্গাপুর ভিসা অনুমোদিত এজেন্টের মাধ্যমে জমা দিতে হয়। আমরা ফর্ম 14A, লেটার অব ইন্ট্রোডাকশন ও জমা সব করে দিই।" },
+    requirements: {
+      en: ["Passport valid 6+ months", "2 photos (35×45 mm, white background)", "Completed Form 14A", "Letter of Introduction (LOI) from a local contact", "Travel itinerary with flight tickets", "Hotel booking / invitation", "Bank statement (last 6 months, signed & stamped)"],
+      bn: ["পাসপোর্ট (৬+ মাস মেয়াদ)", "২ কপি ছবি (৩৫×৪৫ মিমি, সাদা ব্যাকগ্রাউন্ড)", "পূরণকৃত ফর্ম 14A", "লোকাল কন্টাক্টের লেটার অব ইন্ট্রোডাকশন (LOI)", "ফ্লাইট টিকিটসহ ভ্রমণসূচি", "হোটেল বুকিং / আমন্ত্রণপত্র", "ব্যাংক স্টেটমেন্ট (৬ মাস, স্বাক্ষর ও সিলসহ)"],
+    },
+    note: { en: "Bangladesh is an Assessment Level II country — citizens cannot self-apply for an e-Visa and must apply via an authorized visa agent.", bn: "বাংলাদেশ Assessment Level II দেশ — নাগরিকরা নিজে ই-ভিসা করতে পারে না, অনুমোদিত এজেন্টের মাধ্যমে আবেদন করতে হয়।" },
+  },
+  {
+    title: { en: "Turkey e-Visa / Sticker Visa", bn: "তুরস্ক ই-ভিসা / স্টিকার ভিসা" },
+    country: "Turkey", visaType: "tourist", status: "published", flag: "🇹🇷",
+    fee: { amount: 9500, currency: "BDT" },
+    processingTime: "7–12 working days (sticker)",
+    validity: { en: "e-Visa valid 180 days", bn: "ই-ভিসা ১৮০ দিন মেয়াদ" },
+    stayDuration: { en: "Up to 30 days", bn: "সর্বোচ্চ ৩০ দিন" },
+    overview: { en: "Turkey offers an e-Visa to Bangladeshi citizens who hold a valid Schengen/US/UK/Ireland visa or residence permit; otherwise a sticker visa from the embassy is required.", bn: "যাদের বৈধ Schengen/US/UK/Ireland ভিসা বা রেসিডেন্স পারমিট আছে তাদের জন্য তুরস্ক ই-ভিসা দেয়; অন্যথায় দূতাবাস থেকে স্টিকার ভিসা নিতে হয়।" },
+    requirements: {
+      en: ["Passport valid 6+ months beyond departure", "For e-Visa: valid Schengen / US / UK / Ireland visa or residence permit", "Recent photo (sticker: 80% face, white background)", "All previous passports (for sticker visa)", "NID / birth certificate", "Hotel booking & return ticket"],
+      bn: ["পাসপোর্ট (প্রস্থানের পর ৬+ মাস মেয়াদ)", "ই-ভিসার জন্য: বৈধ Schengen / US / UK / Ireland ভিসা বা রেসিডেন্স পারমিট", "সাম্প্রতিক ছবি (স্টিকার: ৮০% মুখ, সাদা ব্যাকগ্রাউন্ড)", "সব পুরনো পাসপোর্ট (স্টিকার ভিসার জন্য)", "এনআইডি / জন্মনিবন্ধন", "হোটেল বুকিং ও রিটার্ন টিকিট"],
+    },
+    note: { en: "Without a Schengen/US/UK/Ireland visa, Bangladeshi citizens must obtain a sticker visa from the Turkish Embassy.", bn: "Schengen/US/UK/Ireland ভিসা না থাকলে বাংলাদেশি নাগরিকদের তুর্কি দূতাবাস থেকে স্টিকার ভিসা নিতে হবে।" },
+  },
+  {
+    title: { en: "China Tourist Visa (L)", bn: "চীন ট্যুরিস্ট ভিসা (L)" },
+    country: "China", visaType: "tourist", status: "published", flag: "🇨🇳",
+    fee: { amount: 8000, currency: "BDT" },
+    processingTime: "4–5 working days (express 2–3)",
+    validity: { en: "Single / double / multiple entry options", bn: "সিঙ্গেল / ডাবল / মাল্টিপল এন্ট্রি অপশন" },
+    stayDuration: { en: "Usually up to 30 days per entry", bn: "সাধারণত প্রতি এন্ট্রিতে সর্বোচ্চ ৩০ দিন" },
+    overview: { en: "China L (tourist) visa for Bangladeshi citizens — applied online via CVASC, then documents submitted to the visa centre in Dhaka.", bn: "বাংলাদেশি নাগরিকদের জন্য চীন L (ট্যুরিস্ট) ভিসা — CVASC-এ অনলাইনে আবেদন, এরপর ঢাকার ভিসা সেন্টারে ডকুমেন্ট জমা।" },
+    requirements: {
+      en: ["Passport valid 6+ months with blank pages (submit all old passports)", "2 photos (48×33 mm, white background, lab-printed, no glasses)", "Completed online application form", "Round-trip air ticket + hotel reservation (or invitation letter)", "Bank statement", "Detailed travel itinerary"],
+      bn: ["পাসপোর্ট (৬+ মাস মেয়াদ, খালি পৃষ্ঠাসহ; সব পুরনো পাসপোর্ট জমা)", "২ কপি ছবি (৪৮×৩৩ মিমি, সাদা ব্যাকগ্রাউন্ড, ল্যাব-প্রিন্ট, চশমা ছাড়া)", "পূরণকৃত অনলাইন আবেদন ফর্ম", "রাউন্ড-ট্রিপ টিকিট + হোটেল রিজার্ভেশন (বা আমন্ত্রণপত্র)", "ব্যাংক স্টেটমেন্ট", "বিস্তারিত ভ্রমণসূচি"],
+    },
+    note: { en: "First-time applicants with no travel history may require an interview; those with prior US/UK/Schengen/China travel are usually exempt.", bn: "ভ্রমণ-ইতিহাসহীন প্রথমবারের আবেদনকারীদের ইন্টারভিউ লাগতে পারে; আগে US/UK/Schengen/China ভ্রমণ থাকলে সাধারণত লাগে না।" },
+  },
+  {
+    title: { en: "Schengen Tourist Visa", bn: "শেনজেন ট্যুরিস্ট ভিসা" },
+    country: "Europe", visaType: "tourist", status: "published", flag: "🇪🇺",
+    fee: { amount: 12000, currency: "BDT" },
+    processingTime: "15–30 calendar days",
+    validity: { en: "As granted (short-stay, up to 90 days / 180 days)", bn: "প্রদত্ত অনুযায়ী (শর্ট-স্টে, ১৮০ দিনে সর্বোচ্চ ৯০ দিন)" },
+    stayDuration: { en: "Up to 90 days within 180 days", bn: "১৮০ দিনে সর্বোচ্চ ৯০ দিন" },
+    overview: { en: "Schengen visa lets you visit 29 European countries on one visa. Applications are submitted through VFS Global in Dhaka — we prepare your full file.", bn: "একটি শেনজেন ভিসায় ২৯টি ইউরোপীয় দেশ ভ্রমণ করা যায়। ঢাকায় VFS Global-এর মাধ্যমে আবেদন — আমরা আপনার সম্পূর্ণ ফাইল প্রস্তুত করি।" },
+    requirements: {
+      en: ["Passport valid 3+ months beyond return, issued within 10 years", "2 recent photos (35×45 mm)", "Travel medical insurance (min €30,000 coverage)", "Confirmed round-trip flight reservation", "Hotel booking for all nights", "Bank statement (last 6 months) + solvency", "Employment / trade license proof", "Cover letter & day-by-day itinerary"],
+      bn: ["পাসপোর্ট (রিটার্নের পর ৩+ মাস মেয়াদ, ১০ বছরের মধ্যে ইস্যু)", "সাম্প্রতিক ২ কপি ছবি (৩৫×৪৫ মিমি)", "ট্রাভেল মেডিকেল ইন্স্যুরেন্স (ন্যূনতম €৩০,০০০ কভারেজ)", "কনফার্ম রাউন্ড-ট্রিপ ফ্লাইট রিজার্ভেশন", "সব রাতের হোটেল বুকিং", "ব্যাংক স্টেটমেন্ট (৬ মাস) + সলভেন্সি", "চাকরি / ট্রেড লাইসেন্স প্রমাণ", "কভার লেটার ও দিনভিত্তিক ভ্রমণসূচি"],
+    },
+    note: { en: "Government visa fee is around €90 plus VFS service charge. Apply via VFS Global; the passport stays with the embassy during processing.", bn: "সরকারি ভিসা ফি প্রায় €৯০ + VFS সার্ভিস চার্জ। VFS Global-এ আবেদন; প্রসেসিং চলাকালীন পাসপোর্ট দূতাবাসে থাকে।" },
+  },
 );
 
 hotels.push(
@@ -237,6 +382,13 @@ airtickets.push(
   { from: "Dhaka (DAC)", to: "Istanbul (IST)", airline: "Turkish Airlines", tripType: "round-trip", status: "published", price: { amount: 92000, currency: "BDT" }, cover: img("1474302770737-173ee21bab63") },
   { from: "Dhaka (DAC)", to: "Kolkata (CCU)", airline: "US-Bangla", tripType: "round-trip", status: "published", price: { amount: 14500, currency: "BDT" }, cover: img("1583416750470-965b2707b355") },
   { from: "Dhaka (DAC)", to: "Kathmandu (KTM)", airline: "Biman Bangladesh", tripType: "round-trip", status: "published", price: { amount: 27000, currency: "BDT" }, cover: img("1610642372651-fe6e7bc60ba6") },
+  { from: "Dhaka (DAC)", to: "Doha (DOH)", airline: "Qatar Airways", tripType: "round-trip", status: "published", price: { amount: 71000, currency: "BDT" }, cover: img("1436491865332-7a61a109cc05") },
+  { from: "Dhaka (DAC)", to: "Riyadh (RUH)", airline: "Saudia", tripType: "round-trip", status: "published", price: { amount: 76000, currency: "BDT" }, cover: img("1610642372651-fe6e7bc60ba6") },
+  { from: "Dhaka (DAC)", to: "London (LHR)", airline: "Emirates", tripType: "round-trip", status: "published", price: { amount: 135000, currency: "BDT" }, cover: img("1474302770737-173ee21bab63") },
+  { from: "Dhaka (DAC)", to: "Muscat (MCT)", airline: "Oman Air", tripType: "round-trip", status: "published", price: { amount: 64000, currency: "BDT" }, cover: img("1583416750470-965b2707b355") },
+  { from: "Dhaka (DAC)", to: "Male (MLE)", airline: "US-Bangla", tripType: "round-trip", status: "published", price: { amount: 49000, currency: "BDT" }, cover: img("1436491865332-7a61a109cc05") },
+  { from: "Dhaka (DAC)", to: "Cox's Bazar (CXB)", airline: "Novoair", tripType: "one-way", status: "published", price: { amount: 5200, currency: "BDT" }, cover: img("1610642372651-fe6e7bc60ba6") },
+  { from: "Chittagong (CGP)", to: "Dhaka (DAC)", airline: "US-Bangla", tripType: "one-way", status: "published", price: { amount: 4200, currency: "BDT" }, cover: img("1583416750470-965b2707b355") },
 );
 
 blogs.push(
@@ -291,7 +443,6 @@ async function seed() {
     ["visas", visas],
     ["hotels", hotels],
     ["airtickets", airtickets],
-    ["blogs", blogs],
     ["banners", banners],
     ["reviews", reviews],
     ["inquiries", inquiries],
@@ -304,6 +455,10 @@ async function seed() {
     console.log(`seeded ${name}: ${docs.length}`);
   }
 
+  // Blog / travel-tips feature removed — drop any legacy data.
+  await db.collection("blogs").deleteMany({});
+  console.log("removed blogs (deprecated feature)");
+
   // Settings (upsert single doc)
   const { DEFAULTS } = require("../controllers/settingsController");
   await db.collection("settings").updateOne(
@@ -311,7 +466,7 @@ async function seed() {
     {
       $set: {
         ...DEFAULTS,
-        contact: { ...DEFAULTS.contact, phone: "+8801XXXXXXXXX", whatsapp: "8801XXXXXXXXX", email: "info@littlebirdtours.com" },
+        contact: { ...DEFAULTS.contact, phone: "01918288388", whatsapp: "8801918288388", email: "info@littlebirdtours.com" },
         updatedAt: now,
       },
       $setOnInsert: { createdAt: now },

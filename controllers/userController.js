@@ -8,7 +8,7 @@ const asyncHandler = require("../utils/asyncHandler");
 const ApiError = require("../utils/ApiError");
 
 const COLLECTION = "users";
-const ROLES = ["user", "agent", "admin", "super-admin"];
+const ROLES = ["user", "super-admin"];
 
 const project = { projection: { password: 0 } };
 

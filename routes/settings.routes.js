@@ -8,7 +8,7 @@ router.get("/settings", c.getSettings); // public — site identity/contact/SEO
 router.patch(
   "/settings",
   verifyJWT,
-  verifyRole("admin", "super-admin"),
+  verifyRole("super-admin"),
   c.updateSettings
 );
 

@@ -3,7 +3,7 @@ const { verifyJWT, verifyRole } = require("../middlewares/auth");
 const c = require("../controllers/bookingController");
 
 const router = express.Router();
-const admin = [verifyJWT, verifyRole("admin", "super-admin", "agent")];
+const admin = [verifyJWT, verifyRole("super-admin")];
 
 router.post("/bookings", verifyJWT, c.createBooking); // authed customer
 router.get("/bookings/me", verifyJWT, c.myBookings); // own bookings

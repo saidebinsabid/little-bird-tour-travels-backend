@@ -13,7 +13,7 @@ const { verifyJWT, verifyRole } = require("../middlewares/auth");
 const { makeCrud } = require("../lib/crudFactory");
 
 const router = express.Router();
-const admin = [verifyJWT, verifyRole("admin", "super-admin")];
+const admin = [verifyJWT, verifyRole("super-admin")];
 
 // Mount the 5 standard CRUD endpoints for a resource in one call.
 function mountCrud(path, collection, opts) {
@@ -74,14 +74,6 @@ mountCrud("air-tickets", "airtickets", {
   filterFields: ["from", "to", "airline", "tripType", "status"],
   rangeParam: { param: "price", field: "price.amount" },
   requiredFields: ["from", "to"],
-});
-
-// ── Blog / travel guide ───────────────────────────────────
-mountCrud("blogs", "blogs", {
-  searchFields: ["title.en", "title.bn", "tags"],
-  filterFields: ["category", "status"],
-  slugFrom: "title.en",
-  requiredFields: ["title.en"],
 });
 
 // ── Home banners / sliders ────────────────────────────────

@@ -123,7 +123,7 @@ const getBooking = asyncHandler(async (req, res) => {
   if (!booking) throw new ApiError(404, "Booking not found");
 
   const isOwner = booking.userEmail === req.decoded.email;
-  const isStaff = ["admin", "super-admin", "agent"].includes(req.decoded.role);
+  const isStaff = req.decoded.role === "super-admin";
   if (!isOwner && !isStaff) throw new ApiError(403, "forbidden access");
 
   return res.json(booking);
